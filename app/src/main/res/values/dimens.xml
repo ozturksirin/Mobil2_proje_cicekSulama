@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="hakkinda_title">30dp</dimen>
+    <dimen name="hakkinda_icerik">20dp</dimen>
+    <dimen name="iletisim_title">30dp</dimen>
+    <dimen name="iletisim_icerik">20dp</dimen>
+</resources>

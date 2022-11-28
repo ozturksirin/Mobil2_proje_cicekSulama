@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">cicek</string>
+    <string name="hakkinda_title">HAKKINDA</string>
+    <string name="hakkinda_metin">Çiçeğinizi istediğiniz yerden sulama imkanı veriyoruz.\n Tatile mi gittiniz rahat edebilirsiniz \n bitkileriniz artık güvende onları
+        kontrol edebilirsiniz, dilerseniz değerli bilgilerimizden faydalnabilirsiniz.</string>
+    <string name="hakkinda_icerik"> Biz öncelikle bir çiftçiyiz. Çiftçi ruhumuz yenilikçi
+        olmayı da beraberinde getirdi. 1965 yılında,  İsrail’in Negev Çölü topraklarındaki yetiştiriciliğimizle bu işe başladık.
+        Bu yüzden zorlu koşullarda çiftçilik yapmanın ne demek olduğunu çok iyi biliriz. Bu mücadele bize, çiftçilerin farklıbitki ve iklim çeşitlerinde
+        daha azla daha fazla yetiştirmesine yardımcı olacak akıllı sulama, agronomik uzmanlık ve sonsuz inovasyonu nasıl birleştireceğimizi öğretti. </string>
+    <string name="iletisim_title">İLETİŞİM</string>
 </resources>

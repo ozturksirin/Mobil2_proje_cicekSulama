@@ -3,9 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/cicek/app/src/main/res/drawable/about_img.xml" value="0.332" />
+        <entry key="..\:/cicek/app/src/main/res/drawable/contact_img.xml" value="0.332" />
+        <entry key="..\:/cicek/app/src/main/res/drawable/hakkinda_img.xml" value="0.332" />
+        <entry key="..\:/cicek/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.332" />
+        <entry key="..\:/cicek/app/src/main/res/drawable/iletisim_img.xml" value="0.332" />
+        <entry key="..\:/cicek/app/src/main/res/layout/activity_bilgi_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/cicek/app/src/main/res/layout/activity_hakkinda_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/cicek/app/src/main/res/layout/activity_iletisim_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/cicek/app/src/main/res/layout/activity_main.xml" value="0.10277777777777777" />
         <entry key="..\:/cicek/app/src/main/res/layout/activity_menu_screen.xml" value="0.33" />
+        <entry key="..\:/cicek/app/src/main/res/layout/bilgi_screen.xml" value="0.365625" />
+        <entry key="..\:/cicek/app/src/main/res/layout/fragment_hakkinda.xml" value="0.36666666666666664" />
+        <entry key="..\:/cicek/app/src/main/res/layout/fragment_iletisim.xml" value="0.36666666666666664" />
+        <entry key="..\:/cicek/app/src/main/res/layout/fragment_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/cicek/app/src/main/res/layout/splashscreen.xml" value="0.33695652173913043" />
+        <entry key="..\:/cicek/app/src/main/res/menu/bottom_bar_menu.xml" value="0.365625" />
       </map>
     </option>
   </component>
