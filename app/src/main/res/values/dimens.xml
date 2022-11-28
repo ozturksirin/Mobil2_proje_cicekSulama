@@ -4,4 +4,5 @@
     <dimen name="hakkinda_icerik">20dp</dimen>
     <dimen name="iletisim_title">30dp</dimen>
     <dimen name="iletisim_icerik">20dp</dimen>
+    <dimen name="iletisim_size">15dp</dimen>
 </resources>
