@@ -15,6 +15,9 @@ public class MenuScreen extends AppCompatActivity {
     private Button btn_hakkinda;
     private Button btn_iletisim;
 
+    private Button btn_sula;
+    private Button btn_sulandı;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,13 +45,43 @@ public class MenuScreen extends AppCompatActivity {
 
 
 
-/*
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        btn_sula = findViewById(R.id.btn_sula);
 
-        myRef.setValue("Hello, World!");
+        btn_sula.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btn_sula.setText("Çiçek SULANIYOR");
 
- */
+                if (btn_sula.getText().equals("Çiçek SULANIYOR")) {
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference("SuVeriliyor");
+
+                    myRef.setValue(true);
+
+                }
+            }
+        });
+
+        btn_sulandı = findViewById(R.id.btn_sulandı);
+
+        btn_sulandı.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btn_sula.setText("Çiçek SULANDI");
+
+                if (btn_sula.getText().equals("Çiçek SULANDI")) {
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference("SuVerildi");
+
+                    myRef.setValue(false);
+
+                }
+
+
+            }
+        });
+
+
+
     }
 }
