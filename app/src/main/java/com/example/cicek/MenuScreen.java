@@ -21,6 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MenuScreen extends AppCompatActivity {
 
+
     private Button btn_hakkinda;
     private Button btn_iletisim;
     // databtn
@@ -29,14 +30,49 @@ public class MenuScreen extends AppCompatActivity {
 
     private TextView txt_nemVeri;
 
+    private DatabaseReference mDatabase;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_screen);
 
+        txt_nemVeri= findViewById(R.id.txt_nemVeri);
 
 
+
+        //database veri okuma & yazma için
+
+        mDatabase = FirebaseDatabase.getInstance().getReference("yuzdeNemVeri");
+
+// read data start
+
+
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                int nem= dataSnapshot.getValue(Integer.class);
+
+                Toast.makeText(MenuScreen.this, "Data READ", Toast.LENGTH_SHORT).show();
+
+                txt_nemVeri.setText(String.valueOf(nem));
+                // ...
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w("TAG", "loadPost:onCancelled", databaseError.toException());
+                // ...
+
+            }
+        };
+           mDatabase.addValueEventListener(postListener);
+//read data end
 
         // hakkında ve iletişim sayfasının intentleri
         btn_hakkinda = findViewById(R.id.btn_hakkinda);
@@ -73,8 +109,8 @@ public class MenuScreen extends AppCompatActivity {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference("useStateWater");
 
-                    myRef.setValue(true);
-
+                    //myRef.setValue(true);
+                    myRef.child("useState").setValue(true);
 
                     Toast toast = Toast.makeText(getApplicationContext(), "Çiçek Sulanıyor kapatmayı unutmayınız!", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
@@ -98,13 +134,15 @@ public class MenuScreen extends AppCompatActivity {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference("useStateWater");
 
-                    myRef.setValue(false);
+                    //myRef.setValue(false);
+                    myRef.child("useState").setValue(false);
 
                     Toast toast = Toast.makeText(getApplicationContext(), "Sulama Başarılı Tebrikler.", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.show();
 
                 }
+
 
 
             }
