@@ -56,10 +56,7 @@ public class MenuScreen extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
                 int nem= dataSnapshot.getValue(Integer.class);
-
-                Toast.makeText(MenuScreen.this, "Data READ", Toast.LENGTH_SHORT).show();
-
-                txt_nemVeri.setText(String.valueOf(nem));
+                txt_nemVeri.setText(String.valueOf(nem+"%"));
                 // ...
             }
 
