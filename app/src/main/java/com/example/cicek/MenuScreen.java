@@ -28,6 +28,11 @@ public class MenuScreen extends AppCompatActivity {
     private Button btn_sula;
     private Button btn_sulandı;
 
+    //btn damla
+    private Button btn_damla;
+    private Button btn_damla_kapat;
+
+
     private TextView txt_nemVeri;
 
     private DatabaseReference mDatabase;
@@ -94,6 +99,49 @@ public class MenuScreen extends AppCompatActivity {
         // hakkında ve iletişim sayfasının intentleri sonu
 
 
+        // damlama sulama baslangıc
+
+        btn_damla = findViewById(R.id.btn_damla);
+
+        btn_damla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btn_damla.setText("Damlama Su Veriliyor");
+                if(btn_damla.getText().equals("Damlama Su Veriliyor")){
+                    FirebaseDatabase damla = FirebaseDatabase.getInstance();
+                    DatabaseReference damlaRef = damla.getReference("Sulama_Damla");
+                    damlaRef.setValue(true);
+
+                    Toast toast = Toast.makeText(getApplicationContext(), "Çiçek Damlama Sulanıyor kapatmayı unutmayınız!", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                }
+
+            }
+        });
+
+        btn_damla_kapat = findViewById(R.id.btn_damla_kapat);
+
+        btn_damla_kapat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btn_damla.setText("Damlama Su Ver");
+                if(btn_damla.getText().equals("Damlama Su Ver")){
+                    FirebaseDatabase damla = FirebaseDatabase.getInstance();
+                    DatabaseReference damlaRef = damla.getReference("Sulama_Damla");
+                    damlaRef.setValue(false);
+
+                    Toast toast = Toast.makeText(getApplicationContext(), "Çiçek Damlama Sulama Kapatıldı!", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+                    toast.show();
+                }
+            }
+        });
+
+
+        //damlama bitis
+
+
         //data gönderme
         btn_sula = findViewById(R.id.btn_sula);
 
@@ -106,8 +154,8 @@ public class MenuScreen extends AppCompatActivity {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference("useStateWater");
 
-                    //myRef.setValue(true);
-                    myRef.child("useState").setValue(true);
+                    myRef.setValue(true);
+                    //myRef.child("useState").setValue(true);
 
                     Toast toast = Toast.makeText(getApplicationContext(), "Çiçek Sulanıyor kapatmayı unutmayınız!", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
@@ -117,8 +165,6 @@ public class MenuScreen extends AppCompatActivity {
             }
 
         });
-
-
 
         btn_sulandı = findViewById(R.id.btn_sulandı);
 
@@ -131,8 +177,8 @@ public class MenuScreen extends AppCompatActivity {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference("useStateWater");
 
-                    //myRef.setValue(false);
-                    myRef.child("useState").setValue(false);
+                    myRef.setValue(false);
+                    //myRef.child("useState").setValue(false);
 
                     Toast toast = Toast.makeText(getApplicationContext(), "Sulama Başarılı Tebrikler.", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
