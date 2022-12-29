@@ -40,6 +40,10 @@ public class MenuScreen extends AppCompatActivity {
 
 
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,9 +107,14 @@ public class MenuScreen extends AppCompatActivity {
 
         btn_damla = findViewById(R.id.btn_damla);
 
+
+
+
         btn_damla.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
                 btn_damla.setText("Damlama Su Veriliyor");
                 if(btn_damla.getText().equals("Damlama Su Veriliyor")){
                     FirebaseDatabase damla = FirebaseDatabase.getInstance();
@@ -117,7 +126,10 @@ public class MenuScreen extends AppCompatActivity {
                     toast.show();
                 }
 
+
             }
+
+
         });
 
         btn_damla_kapat = findViewById(R.id.btn_damla_kapat);
@@ -136,6 +148,7 @@ public class MenuScreen extends AppCompatActivity {
                     toast.show();
                 }
             }
+
         });
 
 
@@ -144,6 +157,7 @@ public class MenuScreen extends AppCompatActivity {
 
         //data gönderme
         btn_sula = findViewById(R.id.btn_sula);
+        
 
         btn_sula.setOnClickListener(new View.OnClickListener() {
             @Override
